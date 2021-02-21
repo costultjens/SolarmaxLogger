@@ -1,0 +1,13 @@
+[Unit]
+Description=Solarmax logger service
+After=network.target
+
+[Service]
+Type=simple
+User=solarmax
+WorkingDirectory=/home/solarmax/solarmaxlogger
+ExecStart=/usr/bin/python /home/solarmax/solarmaxlogger/solarmaxlogger.py /home/solarmax/solarmaxlogger/solarmaxlogger.conf
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
